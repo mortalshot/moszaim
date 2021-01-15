@@ -1,0 +1,32 @@
+.title {
+    &-h2 {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 1;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + 'px') {
+            font-size: calc(20px + 10 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+        }
+    }
+
+    &-h3 {
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 21px;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + 'px') {
+            font-size: calc(15px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(21 / 17);
+        }
+    }
+    
+    &-h5 {
+        font-size: 12px;
+        line-height: 15px;
+
+        @media screen and (min-width: $layoutDesktop + 'px') {
+            font-size: calc(10px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(15 / 12);
+        }
+    }
+}

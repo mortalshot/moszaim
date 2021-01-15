@@ -1,0 +1,36 @@
+.btn {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    color: $Black;
+    border-color: $Black;
+    background-color: $White;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 3px solid;
+    padding: 12px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease all 0s;
+
+    @media screen and (min-width: 992px) {
+        &:hover {
+            border-color: $Red;
+            color: $Red;
+        }
+    }
+
+    &-red {
+        border-color: $Red;
+        color: $Red;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                border-color: $Black;
+                color: $Black;
+            }
+        }
+    }
+}
