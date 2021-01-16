@@ -1,8 +1,14 @@
 const sumSlider = document.getElementById('sumSlider');
 const sumInput = document.getElementById('inputSumSlider');
 
+const daySlider = document.getElementById('daySlider');
+const dayInput = document.getElementById('inputDaySlider');
+
+const percent = 1; // процентная ставка
+let dayNum = 1; // кол-во дней
+let sumNum = 5000; // сумма заёма
+
 if (sumSlider) {
-    const calculatorResLabel = document.querySelector('.calculator-sum__result');
     const sumSliderMaxValue = 30000;
 
     noUiSlider.create(sumSlider, {
@@ -32,18 +38,20 @@ if (sumSlider) {
 
     sumSlider.noUiSlider.on('update', function (values, handle) {
         sumInput.value = values[handle];
+        sumNum = parseInt(values[handle]) * 1000;
+
+        $('.calculator-sum__price .calculator-sum__result span').text(calcSum(sumNum, dayNum, percent));
     });
 
     sumInput.addEventListener('change', function () {
         sumSlider.noUiSlider.set([sumInput.value]);
+        sumNum = values[handle];
+
+        $('.calculator-sum__price .calculator-sum__result span').text(calcSum(sumNum, dayNum, percent));
     });
 }
 
-const daySlider = document.getElementById('daySlider');
-const dayInput = document.getElementById('inputDaySlider');
-
 if (daySlider) {
-    const calculatorResLabel = document.querySelector('.calculator-sum__result');
     const daySliderMaxValue = 90;
 
     noUiSlider.create(daySlider, {
@@ -71,6 +79,9 @@ if (daySlider) {
         var strDate = date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear();
 
         $('.calculator-sum__date .calculator-sum__result span').text(strDate);
+        dayNum = values[handle];
+
+        $('.calculator-sum__price .calculator-sum__result span').text(calcSum(sumNum, dayNum, percent));
     });
 
     dayInput.addEventListener('change', function () {
@@ -81,56 +92,34 @@ if (daySlider) {
         var strDate = date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear();
 
         $('.calculator-sum__date .calculator-sum__result span').text(strDate);
+        dayNum = parseInt(values[handle]);
+
+        $('.calculator-sum__price .calculator-sum__result span').text(calcSum(sumNum, dayNum, percent));
     });
 
+    // изменения текста подписи в калькуляторе по дням
     $('#daySlider .noUi-value-large:nth-child(2)').text('от 1 дня');
     $('#daySlider .noUi-value-large:last-child').text('до ' + daySliderMaxValue + ' дней');
-
-    function getNoun(number, one, two, five) {
-        let n = Math.abs(number);
-        n %= 100;
-        if (n >= 5 && n <= 20) {
-            return five;
-        }
-        n %= 10;
-        if (n === 1) {
-            return one;
-        }
-        if (n >= 2 && n <= 4) {
-            return two;
-        }
-        return five;
-    }
 }
 
+// изменение склонения день, дня, дней
+function getNoun(number, one, two, five) {
+    let n = Math.abs(number);
+    n %= 100;
+    if (n >= 5 && n <= 20) {
+        return five;
+    }
+    n %= 10;
+    if (n === 1) {
+        return one;
+    }
+    if (n >= 2 && n <= 4) {
+        return two;
+    }
+    return five;
+}
 
-
-
-
-
-    // sumSlider.noUiSlider.on('update', function (values, handle) {
-    //     computerInput.value = values[handle];
-    //     priceCalculate(computerPrice, serverPrice, serverInput.value, computerInput.value);
-    // });
-    // computerInput.addEventListener('change', function () {
-    //     sumSlider.noUiSlider.set([5, computerInput.value]);
-    //     priceCalculate(computerPrice, serverPrice, serverInput.value, computerInput.value);
-    // });
-    // serverSlider.noUiSlider.on('update', function (values, handle) {
-    //     serverInput.value = values[handle];
-    //     priceCalculate(computerPrice, serverPrice, serverInput.value, computerInput.value);
-    // });
-    // serverInput.addEventListener('change', function () {
-    //     serverSlider.noUiSlider.set([1, serverInput.value]);
-    //     priceCalculate(computerPrice, serverPrice, serverInput.value, computerInput.value);
-    // });
-
-    // function priceCalculate(computerPrice, serverPrice, serverNum, computerNum) {
-    //     if (computerInput.value == sumSliderMaxValue || serverInput.value == serverSliderMaxValue) {
-    //         calculatorResLabel.innerHTML = 'Индивидуальный расчет';
-    //     } else {
-    //         calculatorResLabel.innerHTML = serverPrice * serverNum + computerPrice * computerNum;
-    //     }
-    // }
-    // $('#numSlider1 .noUi-value.noUi-value-horizontal.noUi-value-large')[1].innerHTML = sumSliderMaxValue - 1 + '+';
-    // $('#numSlider2 .noUi-value.noUi-value-horizontal.noUi-value-large')[1].innerHTML = serverSliderMaxValue - 1 + '+';
+// В калькуляторе идет просто 1% за день от суммы (сумма+1%*кол-во дней = конечная сумма)
+function calcSum(loanAmount, daysAmount, percent) {
+    return loanAmount + (loanAmount / 100 * percent) * daysAmount;
+}

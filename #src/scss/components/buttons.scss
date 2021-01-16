@@ -33,4 +33,25 @@
             }
         }
     }
+
+    &-more {
+        border: 0;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.2px;
+		color: $Red;
+		display: inline-flex;
+		align-items: center;
+		white-space: nowrap;
+		padding: 0; 
+
+		span {
+			margin-right: 7px;
+		}
+
+		i {
+			font-size: 9px;
+		}
+    }
 }

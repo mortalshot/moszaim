@@ -303,6 +303,11 @@
 		text-transform: uppercase;
 	}
 
+	&__list--row {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
 	&__item {
 	}
 
