@@ -198,6 +198,24 @@
 				margin: 0;
 			}
 		}
+
+		.menu__link {
+			
+			&::before {
+				height: 1px;
+				transform: translate(-50%, 0) scale(0);
+			}
+
+			@media screen and (min-width: 992px) {
+				&:hover {
+					color: $Red;
+
+					&::before {
+						transform: translate(-50%, 0) scale(1);
+					}
+				}
+			}
+		}
 	}
 
 	&__btn {
@@ -258,10 +276,43 @@
 			@media screen and (max-width: 767px) {
 				margin: 0;
 			}
+
+			&.active {
+				.menu__link {
+					color: $Red;
+
+					&::before {
+						transform: translate(-50%, 20px) scale(1);
+
+						@media screen and (max-width: 767px) {
+							transform: translate(-50%, 0px) scale(1);
+						}
+					}
+				}
+			}
 		}
 
 		.menu__link {
 			letter-spacing: 0.7px;
+
+			&::before {
+				transform: translate(-50%, 20px) scale(0);
+				height: 2px;
+
+				@media screen and (max-width: 767px) {
+					transform: translate(-50%, 0px) scale(0);
+				}
+			}
+
+			@media screen and (min-width: 992px) {
+				&:hover {
+					color: $Red;
+
+					&::before {
+						transform: translate(-50%, 20px) scale(1);
+					}
+				}
+			}
 		}
 	}
 
@@ -286,7 +337,27 @@
 		}
 	}
 
+	.menu__item--red {
+		.menu__link {
+			color: $Red;
+		}
+	}
+
 	.menu__link {
+		position: relative;
+		transition: 0.3s ease all 0s;
+
+		&::before {
+			content: "";
+			display: block;
+			width: 100%;
+			background-color: $Red;
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			transition: 0.3s ease all 0s;
+		}
+
 		@media screen and (max-width: 767px) {
 			font-size: 15px;
 			line-height: 18px;

@@ -3270,6 +3270,35 @@ $slickElement.slick({
     nextArrow: '<button type="button" class="slick-next"><i class="icon-arrow-banner-right"></i></button>',
 });
 
+$('.loan-programs__list').slick({
+    mobileFirst: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: true,
+    variableWidth: false,
+    infinite: false,
+
+    responsive: [
+        {
+            breakpoint: 991,
+            settings: "unslick"
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 3,
+            }
+        },
+        {
+            breakpoint: 575,
+            settings: {
+                slidesToShow: 2,
+            }
+        },
+    ]
+});
+
 // $('.gallery__thumbnails').slick({
 //     slidesToShow: 3,
 //     slidesToScroll: 1,

@@ -1,0 +1,156 @@
+.footer {
+	padding: 26px 0;
+	background-color: $LGrey;
+
+	&__container {
+	}
+
+	&__row {
+		display: flex;
+		align-items: center;
+
+		@media screen and (max-width: 450px) {
+			flex-direction: column;
+		}
+	}
+
+	&__left {
+		@media screen and (max-width: 767px) {
+			flex: 0 0 50%;
+			padding-right: 15px;
+		}
+		@media screen and (max-width: 450px) {
+			text-align: center;
+			margin-bottom: 22px;
+			padding: 0;
+		}
+	}
+
+	&__logo {
+		margin-bottom: 17px;
+
+		@media screen and (max-width: 450px) {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__copyright {
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.2px;
+		color: $Grey;
+		margin-bottom: 15px;
+
+		@media screen and (max-width: 450px) {
+			display: none;
+		}
+	}
+
+	&__btn {
+		font-size: 12px;
+		line-height: 15px;
+		letter-spacing: 0px;
+
+		@media screen and (max-width: 1200px) {
+			white-space: normal;
+			display: block;
+		}
+	}
+
+	&__center {
+		@include adaptiv-value("padding-left", 66, -40, 1);
+		@include adaptiv-value("padding-right", 66, -40, 1);
+		flex: 0 0 58.5%;
+
+		@media screen and (max-width: 1100px) {
+			flex: 0 0 57%;
+		}
+		@media screen and (max-width: 767px) {
+			display: none;
+		}
+	}
+
+	&__menu {
+		display: flex;
+
+		.menu__item {
+			margin: 2.5px 0;
+		}
+
+		.menu__link {
+			white-space: nowrap;
+			display: block;
+		}
+	}
+
+	&__list {
+		flex-direction: column;
+		@include adaptiv-value("padding-left", 25, 0, 1);
+		@include adaptiv-value("padding-right", 25, 0, 1);
+	}
+
+	.menu__list--row {
+		flex-direction: row;
+		padding: 0;
+
+		.menu__item {
+			flex: 0 0 50%;
+			margin: 5px 0;
+			@include adaptiv-value("padding-left", 25, 0, 1);
+			@include adaptiv-value("padding-right", 25, 0, 1);
+		}
+
+		.menu__link {
+			letter-spacing: 0.6px;
+
+			@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+				font-size: calc(8px + 4 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+				line-height: calc(15 / 12);
+			}
+		}
+	}
+
+	&__right {
+		text-align: right;
+
+		@media screen and (max-width: 767px) {
+			flex: 0 0 50%;
+			padding-left: 15px;
+		}
+		@media screen and (max-width: 450px) {
+			text-align: center;
+			padding: 0;
+		}
+	}
+
+	&__contact {
+		margin-bottom: 15px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__link {
+		font-weight: 700;
+		font-size: 13px;
+		line-height: 16px;
+		color: $Black;
+	}
+
+	&__contact-label {
+		font-size: 12px;
+		line-height: 15px;
+		letter-spacing: 0.1px;
+		color: $Grey;
+		margin-top: 4px;
+	}
+
+	&__address {
+		font-size: 12px;
+		line-height: 15px;
+		letter-spacing: 0.1px;
+	}
+}

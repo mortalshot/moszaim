@@ -90,6 +90,19 @@
 	&__item {
 	}
 
+	&__wrapper {
+		max-width: 600px;
+		min-height: 500px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 30px 0;
+
+		@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+			max-width: 84%;
+		}
+	}
+
 	&__item-row {
 		display: flex;
 		position: relative;
@@ -164,6 +177,30 @@
 			margin: 0 auto;
 			font-size: 15px;
 			line-height: 18px;
+		}
+	}
+
+	&__quote {
+		font-weight: 700;
+		font-size: 21px;
+		line-height: 26px;
+		letter-spacing: 0.2px;
+		@include adaptiv-value("margin-bottom", 30, 20, 1);
+
+		@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+			font-size: calc(17px + 4 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(26 / 21);
+		}
+	}
+
+	&__text {
+		font-size: 17px;
+		line-height: 21px;
+		letter-spacing: 0.2px;
+
+		@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+			font-size: calc(14px + 3 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(21 / 17);
 		}
 	}
 
@@ -268,6 +305,39 @@
 		.form__button {
 			@media screen and (max-width: 575px) {
 				margin: 0 auto;
+			}
+		}
+	}
+
+	&--text {
+		@include adaptiv-value("margin-bottom", 80, 50, 1);
+
+		@media screen and (max-width: 767px) {
+			.main__row {
+				background-color: transparent;
+			}
+
+			.main__slider {
+				@include adaptiv-value("padding-right", 81, 15, 1);
+				min-height: 100%;
+				background-color: $Pink;
+			}
+
+			.main__wrapper {
+				min-height: initial;
+				max-width: 100%;
+			}
+
+			.main__form {
+				position: initial;
+				max-width: 545px;
+				margin: 50px auto 60px;
+			}
+		}
+
+		@media screen and (max-width: 575px) {
+			.main__form {
+				margin: 50px 15px 60px;
 			}
 		}
 	}
@@ -602,159 +672,236 @@
 }
 //!! calculator end
 
-.footer {
-	padding: 26px 0;
-	background-color: $LGrey;
+.advantage {
+	@include adaptiv-value("margin-bottom", 67, 50, 1);
 
 	&__container {
 	}
 
-	&__row {
-		display: flex;
-		align-items: center;
-
-		@media screen and (max-width: 450px) {
-			flex-direction: column;
-		}
-	}
-
-	&__left {
-		@media screen and (max-width: 767px) {
-			flex: 0 0 50%;
-			padding-right: 15px;
-		}
-		@media screen and (max-width: 450px) {
-			text-align: center;
-			margin-bottom: 22px;
-			padding: 0;
-		}
-	}
-
-	&__logo {
-		margin-bottom: 17px;
-
-		@media screen and (max-width: 450px) {
-			display: flex;
-			justify-content: center;
-			margin-bottom: 10px;
-		}
-	}
-
-	&__copyright {
-		font-size: 14px;
-		line-height: 17px;
-		letter-spacing: 0.2px;
-		color: $Grey;
-		margin-bottom: 15px;
-		
-		@media screen and (max-width: 450px) {
-			display: none;
-		}
-	}
-
-	&__btn {
-		font-size: 12px;
-		line-height: 15px;
-		letter-spacing: 0px;
-
-		@media screen and (max-width: 1200px) {
-			white-space: normal;
-			display: block;
-		}
-	}
-
-	&__center {
-		@include adaptiv-value("padding-left", 66, -40, 1);
-		@include adaptiv-value("padding-right", 66, -40, 1);
-		flex: 0 0 58.5%;
-
-		@media screen and (max-width: 1100px) {
-			flex: 0 0 57%;
-		}
-		@media screen and (max-width: 767px) {
-			display: none;
-		}
-	}
-
-	&__menu {
-		display: flex;
-
-		.menu__item {
-			margin: 2.5px 0;
-		}
-
-		.menu__link {
-			white-space: nowrap;
-			display: block;
-		}
+	&__title {
+		@include adaptiv-value("margin-bottom", 33, 13, 1);
 	}
 
 	&__list {
-		flex-direction: column;
-		@include adaptiv-value("padding-left", 25, 0, 1);
-		@include adaptiv-value("padding-right", 25, 0, 1);
+		display: flex;
+		flex-wrap: wrap;
+		@include adaptiv-value("margin-right", -16, -10, 1);
+		@include adaptiv-value("margin-left", -16, -10, 1);
 	}
 
-	.menu__list--row {
-		flex-direction: row;
-		padding: 0;
+	&__item {
+		display: flex;
+		flex: 0 0 25%;
+		@include adaptiv-value("padding-top", 12.5, 7.5, 1);
+		@include adaptiv-value("padding-bottom", 12.5, 7.5, 1);
+		@include adaptiv-value("padding-right", 16, 10, 1);
+		@include adaptiv-value("padding-left", 16, 10, 1);
+		letter-spacing: 0.2px;
 
-		.menu__item {
+		@media screen and (max-width: 991px) {
+			flex: 0 0 33.333%;
+		}
+		@media screen and (max-width: 575px) {
 			flex: 0 0 50%;
-			margin: 5px 0;
-			@include adaptiv-value("padding-left", 25, 0, 1);
-			@include adaptiv-value("padding-right", 25, 0, 1);
+		}
+		@media screen and (max-width: 450px) {
+			flex: 0 0 100%;
+		}
+	}
+
+	&__item-wrapper {
+		position: relative;
+		padding-left: 13px;
+
+		&::before {
+			content: "";
+			display: block;
+			width: 3px;
+			height: 100%;
+			background-color: $Red;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+
+	&__item-title {
+		font-weight: 700;
+		font-size: 17px;
+		line-height: 21px;
+		@include adaptiv-value("margin-bottom", 10, 7, 1);
+
+		@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+			font-size: calc(12px + 5 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(21 / 17);
+		}
+		@media screen and (max-width: 450px) {
+			font-size: 15px;
+		}
+	}
+
+	&__item-text {
+		@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+			font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(17 / 14);
+		}
+		@media screen and (max-width: 450px) {
+			font-size: 14px;
+		}
+	}
+}
+
+.loan-programs {
+	@include adaptiv-value("margin-bottom", 80, 50, 1);
+
+	&__container {
+	}
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 42, 20, 1);
+	}
+
+	&__note {
+		color: $Red;
+		margin: 0 0 20px;
+		max-width: 530px;
+		letter-spacing: 0.2px;
+	}
+
+	&__list {
+		@include adaptiv-value("margin-left", -15, -8, 1);
+		@include adaptiv-value("margin-right", -15, -8, 1);
+
+		@media screen and (min-width: 992px) {
+			display: flex;
 		}
 
-		.menu__link {
-			letter-spacing: 0.6px;
+		.slick-list {
+			display: flex;
+		}
 
-			@media screen and (max-width: $layoutDesktop - 0.02 + 'px') {
-				font-size: calc(8px + 4 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
-				line-height: calc(15 / 12);
+		.slick-track {
+			display: flex;
+		}
+
+		.slick-dots {
+			display: flex;
+			border-radius: 5px;
+			margin-top: 21px;
+			@include adaptiv-value("padding-left", 15, 8, 1);
+			@include adaptiv-value("padding-right", 15, 8, 1);
+
+			li {
+				width: 100%;
+				height: 7px;
+				display: flex;
+
+				button {
+					height: 7px;
+					width: 100%;
+					font-size: 0;
+					background-color: $LGrey;
+				}
+
+				&.slick-active {
+					button {
+						background-color: $Grey;
+						border-radius: 5px;
+					}
+				}
 			}
 		}
 	}
 
-	&__right {
-		text-align: right;
+	&__card {
+		display: flex !important;
+		padding: 0 15px;
+		@include adaptiv-value("padding-left", 15, 8, 1);
+		@include adaptiv-value("padding-right", 15, 8, 1);
+		flex: 0 0 25%;
+		letter-spacing: 0.2px;
 
-		@media screen and (max-width: 767px) {
-			flex: 0 0 50%;
-			padding-left: 15px;
-		}
-		@media screen and (max-width: 450px) {
-			text-align: center;
-			padding: 0;
+		@media screen and (max-width: 991px) {
+			min-width: 1px;
+			width: 100%;
 		}
 	}
 
-	&__contact {
-		margin-bottom: 15px;
+	&__card-wrapper {
+		border-radius: 5px;
+		background-color: $LGrey;
+		padding: 25px 23px;
+	}
 
-		&:last-child {
+	&__card-title {
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 26px;
+		color: $Red;
+		letter-spacing: 0.4px;
+		margin-bottom: 20px;
+		min-height: 52px;
+		display: flex;
+		align-items: center;
+
+		@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+			font-size: calc(20px + 10 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(26 / 30);
+		}
+	}
+
+	&__card-detail {
+		margin: 20px 0;
+	}
+
+	&__card-detail--row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0px 0px 10px 0px;
+
+		.loan-programs__card-label {
 			margin-bottom: 0;
 		}
 	}
 
-	&__link {
+	&__card-label {
+		font-size: 12px;
+		line-height: 15px;
+		color: $Grey;
+		margin-bottom: 5px;
+	}
+
+	&__card-bold {
 		font-weight: 700;
 		font-size: 13px;
 		line-height: 16px;
-		color: $Black;
 	}
 
-	&__contact-label {
+	&__card-links {
+		display: flex;
+	}
+
+	&__card-link {
+		color: $Red;
+		transition: 0.3s ease all 0s;
+		margin-right: 21px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__card-note {
 		font-size: 12px;
 		line-height: 15px;
-		letter-spacing: 0.1px;
 		color: $Grey;
-		margin-top: 4px;
 	}
 
-	&__address {
-		font-size: 12px;
-		line-height: 15px;
-		letter-spacing: 0.1px;
+	&--express {
+		.loan-programs__title {
+			margin-bottom: 17px;
+		}
 	}
 }
+// !loan page end
