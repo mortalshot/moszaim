@@ -4902,4 +4902,30 @@ $(document).ready(function () {
   function calcSum(loanAmount, daysAmount, percent) {
     return loanAmount + loanAmount / 100 * percent * daysAmount;
   }
+
+  $('.accordion__title').click(function (event) {
+    var accordionid = $(this).closest('.accordion').attr("id");
+
+    if ($('#' + accordionid).hasClass('accordion-one')) {
+      $('#' + accordionid + ' ' + '.accordion__title').not($(this)).removeClass('active');
+      $('#' + accordionid + ' ' + '.accordion__text').not($(this).next()).slideUp(300);
+    }
+
+    $(this).toggleClass('active').next('.accordion__text').slideToggle(300);
+  });
+  var mediaQueryMdMax = window.matchMedia('(max-width: 767px)');
+
+  if (mediaQueryMdMax.matches) {
+    $('.vacancies__card-content').addClass('accordion__text');
+  }
+
+  mediaQueryMdMax.addListener(handleTabletChange);
+
+  function handleTabletChange(e) {
+    if (e.matches) {
+      $('.vacancies__card-content').addClass('accordion__text');
+    } else {
+      $('.vacancies__card-content').removeClass('accordion__text');
+    }
+  }
 });

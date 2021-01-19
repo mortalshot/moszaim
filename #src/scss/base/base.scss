@@ -57,7 +57,7 @@ img {
 .quote-title {
     position: relative;
     padding-left: 20px;
-    
+
     &::before {
         content: "";
         display: block;
@@ -67,4 +67,8 @@ img {
         position: absolute;
         left: 0;
     }
+}
+
+.first-section {
+    @include adaptiv-value("margin-top", 20, 15, 1);
 }

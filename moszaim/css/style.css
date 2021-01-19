@@ -1564,6 +1564,10 @@ img {
   left: 0;
 }
 
+.first-section {
+  margin-top: 20px;
+}
+
 .title-h2 {
   font-weight: 700;
   font-size: 30px;
@@ -1919,6 +1923,57 @@ textarea.form__input {
   min-height: 120px;
   resize: vertical;
   padding: 20px;
+}
+
+.accordion__title {
+  position: relative;
+  cursor: pointer;
+}
+
+.accordion__title::before,
+.accordion__title::after {
+  content: "";
+  width: 9px;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  -webkit-transition: 0.3s ease all 0s;
+  -o-transition: 0.3s ease all 0s;
+  transition: 0.3s ease all 0s;
+}
+
+.accordion__title::before {
+  -webkit-transform: translate(0, -50%) rotate(-45deg);
+      -ms-transform: translate(0, -50%) rotate(-45deg);
+          transform: translate(0, -50%) rotate(-45deg);
+  right: 0;
+}
+
+.accordion__title::after {
+  -webkit-transform: translate(0, -50%) rotate(45deg);
+      -ms-transform: translate(0, -50%) rotate(45deg);
+          transform: translate(0, -50%) rotate(45deg);
+  right: 6px;
+}
+
+.accordion__title.active::before {
+  -webkit-transform: translate(0, -50%) rotate(45deg);
+      -ms-transform: translate(0, -50%) rotate(45deg);
+          transform: translate(0, -50%) rotate(45deg);
+}
+
+.accordion__title.active::after {
+  -webkit-transform: translate(0, -50%) rotate(-45deg);
+      -ms-transform: translate(0, -50%) rotate(-45deg);
+          transform: translate(0, -50%) rotate(-45deg);
+}
+
+.accordion__text {
+  display: none;
 }
 
 .header {
@@ -3070,6 +3125,220 @@ textarea.form__input {
   max-width: 315px;
 }
 
+.contacts {
+  margin-bottom: 80px;
+}
+
+.contacts__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contacts__content {
+  max-width: 449px;
+  padding-right: 15px;
+}
+
+.contacts__phone {
+  margin-bottom: 80px;
+}
+
+.contacts__title {
+  margin-bottom: 37px;
+}
+
+.contacts__phone-link {
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 49px;
+  letter-spacing: 0.4px;
+  color: #1d1d1d;
+  -webkit-transition: 0.3s ease all 0s;
+  -o-transition: 0.3s ease all 0s;
+  transition: 0.3s ease all 0s;
+  display: block;
+  margin-bottom: 15px;
+  white-space: nowrap;
+}
+
+.contacts__phone-label {
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.2px;
+  color: #8e8e8e;
+}
+
+.contacts__requisite {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.contacts__requisite:last-child {
+  margin-bottom: 0;
+}
+
+.contacts__requisite-label {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.2px;
+  color: #8e8e8e;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 47px;
+          flex: 0 0 47px;
+  width: 100%;
+  max-width: 47px;
+  padding-right: 15px;
+}
+
+.contacts__requisite-text {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  color: #1d1d1d;
+}
+
+.contacts__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 471px;
+          flex: 0 0 471px;
+  position: relative;
+}
+
+.cities__content {
+  max-width: 583px;
+  padding-right: 15px;
+}
+
+.cities__subtitle {
+  margin-bottom: 15px;
+}
+
+.cities__title {
+  margin-bottom: 30px;
+  line-height: 37px;
+}
+
+.cities__text {
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.2px;
+  margin-bottom: 40px;
+}
+
+.cities__btn {
+  height: 46px;
+  padding: 15px 25px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.vacancies {
+  margin-bottom: 80px;
+}
+
+.vacancies__title {
+  margin-bottom: 40px;
+}
+
+.vacancies__list {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 40px;
+}
+
+.vacancies__card {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.vacancies__card-wrapper {
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  padding-top: 25px;
+  padding-bottom: 30px;
+  padding-left: 23px;
+  padding-right: 23px;
+}
+
+.vacancies__card-title {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 21px;
+  letter-spacing: 0.2px;
+  cursor: auto;
+  color: #a80011;
+}
+
+.vacancies__options {
+  margin-bottom: 20px;
+}
+
+.vacancies__options:last-child {
+  margin-bottom: 0;
+}
+
+.vacancies__option-label {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+
+.vacancies__option {
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.2px;
+}
+
+.vacancies .accordion__title::before,
+.vacancies .accordion__title::after {
+  display: none;
+}
+
+.vacancies__note {
+  max-width: 670px;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.2px;
+  margin-bottom: 20px;
+}
+
+.vacancies__contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.vacancies__contact-label {
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.2px;
+  margin-right: 5px;
+}
+
+.vacancies__contact-link {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  color: #a80011;
+  -webkit-transition: 0.3s ease all 0s;
+  -o-transition: 0.3s ease all 0s;
+  transition: 0.3s ease all 0s;
+}
+
 @media screen and (min-width: 576px) {
   .about__row {
     display: -webkit-box;
@@ -3090,6 +3359,60 @@ textarea.form__input {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 50%;
             flex: 0 0 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .vacancies__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .vacancies__card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.333%;
+            flex: 0 0 33.333%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .vacancies__card-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .vacancies__card-title {
+    min-height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .vacancies__card-content {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -3249,9 +3572,38 @@ textarea.form__input {
   .certificates__certificate-img {
     padding-bottom: 142%;
   }
+
+  .contacts__phone-link {
+    font-size: calc(28px + 17 * ((100vw - 320px) / (1480 - 320)));
+    line-height: calc(49 / 45);
+  }
+
+  .contacts__phone-label {
+    font-size: calc(12px + 2 * ((100vw - 320px) / (1480 - 320)));
+    line-height: calc(17 / 14);
+  }
+
+  .contacts__image {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 41%;
+            flex: 0 0 41%;
+  }
+
+  .cities__title {
+    line-height: calc(37 / 30);
+  }
+
+  .vacancies__card-title {
+    font-size: calc(13px + 4 * ((100vw - 320px) / (1480 - 320)));
+    line-height: calc(21 / 17);
+  }
 }
 
 @media (max-width: 1230px) {
+  .first-section {
+    margin-top: calc(15px + 5 * ((100vw - 320px) / (1160)));
+  }
+
   .form__title {
     padding-bottom: calc(20px + 15 * ((100vw - 320px) / (1160)));
   }
@@ -3512,6 +3864,78 @@ textarea.form__input {
 
   .about__label {
     max-width: calc(240px + 15 * ((100vw - 320px) / (1160)));
+  }
+
+  .contacts {
+    margin-bottom: calc(50px + 30 * ((100vw - 320px) / (1160)));
+  }
+
+  .contacts__phone {
+    margin-bottom: calc(45px + 35 * ((100vw - 320px) / (1160)));
+  }
+
+  .contacts__title {
+    margin-bottom: calc(20px + 17 * ((100vw - 320px) / (1160)));
+  }
+
+  .contacts__phone-link {
+    margin-bottom: calc(10px + 5 * ((100vw - 320px) / (1160)));
+  }
+
+  .cities__title {
+    margin-bottom: calc(20px + 10 * ((100vw - 320px) / (1160)));
+  }
+
+  .cities__text {
+    margin-bottom: calc(20px + 20 * ((100vw - 320px) / (1160)));
+  }
+
+  .vacancies {
+    margin-bottom: calc(50px + 30 * ((100vw - 320px) / (1160)));
+  }
+
+  .vacancies__title {
+    margin-bottom: calc(20px + 20 * ((100vw - 320px) / (1160)));
+  }
+
+  .vacancies__list {
+    margin-left: calc(-8px + -7 * ((100vw - 320px) / (1160)));
+  }
+
+  .vacancies__list {
+    margin-right: calc(-8px + -7 * ((100vw - 320px) / (1160)));
+  }
+
+  .vacancies__list {
+    margin-bottom: calc(30px + 10 * ((100vw - 320px) / (1160)));
+  }
+
+  .vacancies__card {
+    padding-left: calc(8px + 7 * ((100vw - 320px) / (1160)));
+  }
+
+  .vacancies__card {
+    padding-right: calc(8px + 7 * ((100vw - 320px) / (1160)));
+  }
+
+  .vacancies__card-wrapper {
+    padding-top: calc(18px + 7 * ((100vw - 320px) / (1160)));
+  }
+
+  .vacancies__card-wrapper {
+    padding-bottom: calc(18px + 12 * ((100vw - 320px) / (1160)));
+  }
+
+  .vacancies__card-wrapper {
+    padding-left: calc(10px + 13 * ((100vw - 320px) / (1160)));
+  }
+
+  .vacancies__card-wrapper {
+    padding-right: calc(10px + 13 * ((100vw - 320px) / (1160)));
+  }
+
+  .vacancies__options {
+    margin-bottom: calc(10px + 10 * ((100vw - 320px) / (1160)));
   }
 }
 
@@ -3845,6 +4269,38 @@ textarea.form__input {
   .certificates__certificate-img {
     padding-bottom: 100%;
   }
+
+  .vacancies__card {
+    margin-bottom: 15px;
+  }
+
+  .vacancies__card-title {
+    cursor: pointer;
+    color: #1d1d1d;
+    padding-right: 24px;
+  }
+
+  .vacancies__card-content {
+    padding-top: 15px;
+  }
+
+  .vacancies .accordion__title::before {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url(../img/icons/accordionPlus.svg) no-repeat center/cover;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+
+  .vacancies .accordion__title.active::before {
+    -webkit-transform: translate(0, -50%) rotate(90deg);
+        -ms-transform: translate(0, -50%) rotate(90deg);
+            transform: translate(0, -50%) rotate(90deg);
+  }
 }
 
 @media screen and (max-width: 767px) and (max-width: 1230px) {
@@ -4022,6 +4478,43 @@ textarea.form__input {
   .about__left {
     margin-bottom: 15px;
   }
+
+  .contacts__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+
+  .contacts__content {
+    padding-right: 0;
+  }
+
+  .contacts__image {
+    padding: 0 40px;
+    margin: 0 auto 33px;
+  }
+
+  .cities__content {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .cities__subtitle {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -4083,6 +4576,23 @@ textarea.form__input {
   }
 
   .about__label {
+    margin-bottom: 5px;
+  }
+
+  .contacts__title {
+    letter-spacing: 0;
+  }
+
+  .contacts__phone-label {
+    letter-spacing: 0;
+  }
+
+  .contacts__requisite {
+    display: block;
+  }
+
+  .contacts__requisite-label {
+    padding: 0;
     margin-bottom: 5px;
   }
 }

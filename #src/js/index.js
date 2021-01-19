@@ -9,4 +9,5 @@
 @@include('components/menu.js')
 @@include('components/slider.js')
 @@include('components/calculator.js')
+@@include('components/accordion.js')
 

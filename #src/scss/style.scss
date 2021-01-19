@@ -1078,3 +1078,332 @@
 	}
 }
 // ! about page end
+
+.contacts {
+	@include adaptiv-value("margin-bottom", 80, 50, 1);
+
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@media screen and (max-width: 575px) {
+			flex-direction: column-reverse;
+			align-items: baseline;
+		}
+	}
+
+	&__content {
+		max-width: 449px;
+		padding-right: 15px;
+
+		@media screen and (max-width: 575px) {
+			padding-right: 0;
+		}
+	}
+
+	&__phone {
+		@include adaptiv-value("margin-bottom", 80, 45, 1);
+	}
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 37, 20, 1);
+
+		@media screen and (max-width: 450px) {
+			letter-spacing: 0;
+		}
+	}
+
+	&__phone-link {
+		font-weight: 700;
+		font-size: 45px;
+		line-height: 49px;
+		letter-spacing: 0.4px;
+		color: $Black;
+		transition: 0.3s ease all 0s;
+		display: block;
+		@include adaptiv-value("margin-bottom", 15, 10, 1);
+		white-space: nowrap;
+
+		@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+			font-size: calc(28px + 17 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(49 / 45);
+		}
+	}
+
+	&__phone-label {
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.2px;
+		color: $Grey;
+
+		@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+			font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(17 / 14);
+		}
+		@media screen and (max-width: 450px) {
+			letter-spacing: 0;
+		}
+	}
+
+	&__requisite {
+		display: flex;
+		margin-bottom: 16px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@media screen and (max-width: 450px) {
+			display: block;
+		}
+	}
+
+	&__requisite-label {
+		font-size: 12px;
+		line-height: 15px;
+		letter-spacing: 0.2px;
+		color: $Grey;
+		flex: 0 0 47px;
+		width: 100%;
+		max-width: 47px;
+		padding-right: 15px;
+
+		@media screen and (max-width: 450px) {
+			padding: 0;
+			margin-bottom: 5px;
+		}
+	}
+
+	&__requisite-text {
+		font-weight: 700;
+		font-size: 13px;
+		line-height: 16px;
+		color: $Black;
+	}
+
+	&__image {
+		flex: 0 0 471px;
+		position: relative;
+
+		@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+			flex: 0 0 41%;
+		}
+		@media screen and (max-width: 575px) {
+			padding: 0 40px;
+			margin: 0 auto 33px;
+		}
+	}
+}
+
+// ! contacts page end
+
+.cities {
+	&__content {
+		max-width: 583px;
+		padding-right: 15px;
+
+		@media screen and (max-width: 575px) {
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: 15px;
+
+		@media screen and (max-width: 575px) {
+			width: 100%;
+		}
+	}
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 30, 20, 1);
+		line-height: 37px;
+
+		@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+			line-height: calc(37 / 30);
+		}
+	}
+
+	&__text {
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.2px;
+		@include adaptiv-value("margin-bottom", 40, 20, 1);
+	}
+
+	&__btn {
+		height: 46px;
+		padding: 15px 25px;
+		display: inline-flex;
+	}
+}
+
+// ! cities page end
+
+.vacancies {
+	@include adaptiv-value("margin-bottom", 80, 50, 1);
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 40, 20, 1);
+	}
+
+	&__list {
+		@include adaptiv-value("margin-left", -15, -8, 1);
+		@include adaptiv-value("margin-right", -15, -8, 1);
+		@include adaptiv-value("margin-bottom", 40, 30, 1);
+
+		@media screen and (min-width: 768px) {
+			display: flex;
+		}
+	}
+
+	&__card {
+		@include adaptiv-value("padding-left", 15, 8, 1);
+		@include adaptiv-value("padding-right", 15, 8, 1);
+
+		@media screen and (min-width: 768px) {
+			flex: 0 0 33.333%;
+			display: flex;
+		}
+		@media screen and (max-width: 767px) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__card-wrapper {
+		background-color: $LGrey;
+		border-radius: 5px;
+		@include adaptiv-value("padding-top", 25, 18, 1);
+		@include adaptiv-value("padding-bottom", 30, 18, 1);
+		@include adaptiv-value("padding-left", 23, 10, 1);
+		@include adaptiv-value("padding-right", 23, 10, 1);
+
+		@media screen and (min-width: 768px) {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	&__card-title {
+		font-weight: 700;
+		font-size: 17px;
+		line-height: 21px;
+		letter-spacing: 0.2px;
+		cursor: auto;
+		color: $Red;
+
+		@media screen and (min-width: 768px) {
+			min-height: 60px;
+			display: flex;
+			align-items: center;
+			margin-bottom: 15px;
+		}
+		@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+			font-size: calc(13px + 4 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(21 / 17);
+		}
+		@media screen and (max-width: 767px) {
+			cursor: pointer;
+			color: $Black;
+			padding-right: 24px;
+		}
+	}
+
+	&__card-content {
+		@media screen and (min-width: 768px) {
+			flex: 1 1 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		@media screen and (max-width: 767px) {
+			padding-top: 15px;
+		}
+	}
+
+	&__options {
+		@include adaptiv-value("margin-bottom", 20, 10, 1);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__option-label {
+		font-weight: 700;
+		font-size: 13px;
+		line-height: 16px;
+		margin-bottom: 10px;
+	}
+
+	&__option {
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.2px;
+	}
+
+	.accordion {
+		&__item {
+		}
+
+		&__title {
+			&::before,
+			&::after {
+				display: none;
+			}
+
+			@media screen and (max-width: 767px) {
+				&::before {
+					content: "";
+					display: block;
+					width: 14px;
+					height: 14px;
+					background: url(../img/icons/accordionPlus.svg) no-repeat center/cover;
+					top: 50%;
+					transform: translate(0, -50%);
+				}
+
+				&.active {
+					&::before {
+						transform: translate(0, -50%) rotate(90deg);
+					}
+				}
+			}
+		}
+
+		&__text {
+		}
+	}
+
+	&__note {
+		max-width: 670px;
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.2px;
+		margin-bottom: 20px;
+	}
+
+	&__contact {
+		display: flex;
+		align-items: center;
+	}
+
+	&__contact-label {
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.2px;
+		margin-right: 5px;
+	}
+
+	&__contact-link {
+		font-weight: 700;
+		font-size: 13px;
+		line-height: 16px;
+		color: $Red;
+		transition: 0.3s ease all 0s;
+	}
+}
