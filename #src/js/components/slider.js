@@ -44,27 +44,31 @@ $('.loan-programs__list').slick({
     ]
 });
 
-// $('.gallery__thumbnails').slick({
-//     slidesToShow: 3,
-//     slidesToScroll: 1,
-//     asNavFor: '.gallery__main',
-//     arrows: false,
-//     focusOnSelect: true,
-//     vertical: true,
-//     verticalSwiping: true,
+$('.certificates__list').slick({
+    mobileFirst: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: true,
+    variableWidth: false,
+    infinite: false,
 
-//     responsive: [
-//         {
-//           breakpoint: 991,
-//           settings: {
-//             vertical: false,
-//             verticalSwiping: false,
-//           }
-//         },
-//       ]
-// });
-
-// $('#productGallery .tabs-triggers__item').click(function() {
-//     $('.gallery__main').slick('refresh');
-//     $('.gallery__thumbnails').slick('refresh');
-// })
+    responsive: [
+        {
+            breakpoint: 991,
+            settings: "unslick"
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 3,
+            }
+        },
+        {
+            breakpoint: 575,
+            settings: {
+                slidesToShow: 2,
+            }
+        },
+    ]
+});

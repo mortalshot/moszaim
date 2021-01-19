@@ -2,6 +2,7 @@
 @@include('libs/dynamic-adapt.js')
 @@include('libs/wNumb.js')
 @@include('libs/nouislider.js')
+@@include('libs/fancybox.js')
 
 // components
 @@include('components/webp.js')
