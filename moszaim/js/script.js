@@ -3340,6 +3340,13 @@ $('.certificates__list').slick({
         },
     ]
 });
+
+$('.reviews__slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: true,
+});
 const sumSlider = document.getElementById('sumSlider');
 const sumInput = document.getElementById('inputSumSlider');
 

@@ -338,6 +338,8 @@
 		@media screen and (max-width: 575px) {
 			.main__form {
 				margin: 50px 15px 60px;
+				@include adaptiv-value("margin-top", 80, 50, 0);
+				@include adaptiv-value("margin-bottom", 80, 50, 0);
 			}
 		}
 	}
@@ -1407,3 +1409,332 @@
 		transition: 0.3s ease all 0s;
 	}
 }
+
+// ! vacancies page end
+
+.steps {
+	@include adaptiv-value("margin-bottom", 80, 50, 1);
+
+	&__items {
+		@media screen and (min-width: 768px) {
+			display: flex;
+		}
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		@include adaptiv-value("padding-right", 38, 0, 1);
+
+		@media screen and (max-width: 767px) {
+			padding: 0px 0px 15px 0px;
+		}
+
+		&::after {
+			@media screen and (min-width: 768px) {
+				content: "";
+				display: block;
+				width: 48px;
+				flex: 0 0 48px;
+				height: 15px;
+				background: url(../img/icons/arrow-steps.svg) no-repeat center/cover;
+				@include adaptiv-value("margin-left", 38, 0, 1);
+			}
+		}
+
+		&:last-child {
+			padding-right: 0;
+
+			@media screen and (max-width: 767px) {
+				padding: 0px 0px 0 0px;
+			}
+
+			&::after {
+				display: none;
+			}
+		}
+	}
+
+	&__item-num {
+		@include adaptiv-value("margin-right", 20, 4, 1);
+		color: $Red;
+	}
+}
+
+.conditions {
+	@include adaptiv-value("margin-bottom", 80, 50, 1);
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 40, 20, 1);
+	}
+
+	&__details {
+		@media screen and (min-width: 576px) {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	&__details-text {
+		max-width: 700px;
+		padding-right: 30px;
+		@include adaptiv-value("margin-bottom", 23, 20, 1);
+	}
+
+	&__details-rate {
+		text-align: center;
+
+		@media screen and (max-width: 575px) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__rate-label {
+		margin-bottom: 6px;
+	}
+
+	&__rate-title {
+		color: $Red;
+		white-space: nowrap;
+	}
+
+	&__links {
+		display: flex;
+		@include adaptiv-value("margin-bottom", 40, 30, 1);
+
+		@media screen and (max-width: 575px) {
+			flex-direction: column;
+		}
+	}
+
+	&__link {
+		@include adaptiv-value("margin-right", 74, 15, 1);
+
+		@media screen and (max-width: 575px) {
+			margin: 0px 0px 15px 0px;
+		}
+
+		&:last-child {
+			margin-right: 0;
+
+			@media screen and (max-width: 575px) {
+				margin: 0;
+			}
+		}
+	}
+
+	&__borrower-title {
+		@include adaptiv-value("margin-bottom", 25, 20, 1);
+
+		@media screen and (max-width: 575px) {
+			text-align: center;
+		}
+	}
+
+	&__borrower-items {
+		display: flex;
+		@include adaptiv-value("margin-bottom", 15, 12, 1);
+
+		@media screen and (max-width: 575px) {
+			flex-direction: column;
+		}
+	}
+
+	&__borrower-item {
+		padding-left: 10px;
+		border-left: 3px solid $Red;
+		@include adaptiv-value("margin-right", 80, 0, 1);
+
+		@media screen and (max-width: 575px) {
+			margin: 0px 0px 15px 0px;
+		}
+
+		&:last-child {
+			margin-right: 0;
+
+			@media screen and (max-width: 575px) {
+				margin: 0;
+			}
+		}
+	}
+
+	&__borrower-note {
+		font-size: 12px;
+		line-height: 15px;
+		color: $Grey;
+	}
+}
+
+.reviews {
+	@include adaptiv-value("margin-bottom", 80, 50, 1);
+
+	&__slider {
+		@include adaptiv-value("margin-left", -15, -8, 1);
+		@include adaptiv-value("margin-right", -15, -8, 1);
+		@include adaptiv-value("margin-bottom", 40, 20, 1);
+
+		.slick-list {
+			display: flex;
+			@include adaptiv-value("padding-top", 40, 20, 1);
+			@include adaptiv-value("padding-bottom", 40, 20, 1);
+		}
+
+		.slick-track {
+			display: flex;
+		}
+
+		.slick-dots {
+			display: flex;
+			align-items: center;
+			border-radius: 5px;
+			margin-top: 21px;
+			@include adaptiv-value("padding-left", 15, 8, 1);
+			@include adaptiv-value("padding-right", 15, 8, 1);
+
+			li {
+				width: 100%;
+				height: 7px;
+				display: flex;
+
+				button {
+					height: 7px;
+					width: 100%;
+					font-size: 0;
+					background-color: $LGrey;
+				}
+
+				&.slick-active {
+					height: 9px;
+
+					button {
+						background-color: $Grey;
+						border-radius: 5px;
+						height: 9px;
+					}
+				}
+			}
+		}
+	}
+
+	&__item {
+		@include adaptiv-value("padding-right", 15, 8, 1);
+		@include adaptiv-value("padding-left", 15, 8, 1);
+		display: flex;
+	}
+
+	&__item-wrapper {
+		@include adaptiv-value("padding-top", 36, 30, 1);
+		@include adaptiv-value("padding-bottom", 36, 30, 1);
+		@include adaptiv-value("padding-left", 25, 10, 1);
+		@include adaptiv-value("padding-right", 25, 10, 1);
+		height: 100%;
+		background-color: $White;
+		border-radius: 20px;
+		filter: drop-shadow(0px 4px 10px rgba(168, 0, 17, 0.1));
+	}
+
+	&__name {
+		margin-bottom: 6px;
+	}
+
+	&__vocation {
+		font-size: 12px;
+		line-height: 15px;
+		letter-spacing: 0.2px;
+		color: $Grey;
+		@include adaptiv-value("margin-bottom", 26, 20, 1);
+	}
+
+	&__text {
+	}
+
+	&__button {
+		display: flex;
+		justify-content: center;
+	}
+}
+// ! loan-obtaining page end
+
+.blog {
+	@include adaptiv-value("margin-bottom", 80, 50, 1);
+
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		@include adaptiv-value("margin-left", -15, -8, 1);
+		@include adaptiv-value("margin-right", -15, -8, 1);
+		@include adaptiv-value("margin-bottom", 25, 12, 1);
+	}
+
+	&__item {
+		flex: 0 0 33.333%;
+		display: flex;
+		@include adaptiv-value("padding", 15, 8, 1);
+
+		@media screen and (max-width: 850px) {
+			flex: 0 0 50%;
+		}
+		@media screen and (max-width: 575px) {
+			flex: 0 0 100%;
+		}
+	}
+
+	&__item-wrapper {
+		padding: 25px 28px;
+		@include adaptiv-value("padding-right", 28, 15, 1);
+		@include adaptiv-value("padding-left", 28, 15, 1);
+		background-color: $White;
+		border-radius: 25px;
+		box-shadow: 0px 4px 20px rgba(248, 237, 234, 0.7);
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__date {
+		color: $Grey;
+		@include adaptiv-value("margin-bottom", 20, 15, 1);
+	}
+
+	&__title {
+		color: $Black;
+		display: block;
+		margin-bottom: 10px;
+		flex: 1 1 auto;
+		transition: 0.3s ease all 0s;
+
+		@media screen and (min-width: 992px) {
+			&:hover {
+				color: rgba($color: $Black, $alpha: 0.8);
+			}
+		}
+	}
+
+	&__excerpt {
+		margin-bottom: 15px;
+		display: -webkit-box;
+		-webkit-line-clamp: 10;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+
+		@media screen and (max-width: 575px) {
+			-webkit-line-clamp: 13;
+		}
+	}
+
+	&__button {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__btn {
+		transition: 0.3s ease all 0s;
+
+		@media screen and (min-width: 992px) {
+			&:hover {
+				color: rgba($color: $Red, $alpha: 0.8);
+			}
+		}
+	}
+}
+// ! blog page end

@@ -4788,6 +4788,12 @@ $(document).ready(function () {
       }
     }]
   });
+  $('.reviews__slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: true
+  });
   var sumSlider = document.getElementById('sumSlider');
   var sumInput = document.getElementById('inputSumSlider');
   var daySlider = document.getElementById('daySlider');
