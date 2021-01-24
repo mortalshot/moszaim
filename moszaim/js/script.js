@@ -3320,7 +3320,6 @@ $('.certificates__list').slick({
     dots: true,
     variableWidth: false,
     infinite: false,
-
     responsive: [
         {
             breakpoint: 991,
@@ -3346,6 +3345,20 @@ $('.reviews__slider').slick({
     slidesToScroll: 1,
     arrows: false,
     dots: true,
+    responsive: [
+        {
+            breakpoint: 991,
+            settings: {
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 575,
+            settings: {
+                slidesToShow: 1,
+            }
+        },
+    ]
 });
 const sumSlider = document.getElementById('sumSlider');
 const sumInput = document.getElementById('inputSumSlider');

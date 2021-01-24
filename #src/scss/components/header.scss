@@ -337,11 +337,7 @@
 		}
 	}
 
-	.menu__item--red {
-		.menu__link {
-			color: $Red;
-		}
-	}
+
 
 	.menu__link {
 		position: relative;
@@ -391,6 +387,13 @@
 		@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
 			font-size: calc(10px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
 			line-height: calc(15 / 12);
+		}
+	}
+
+	.menu__item--red {
+		.menu__link {
+			font-weight: 500;
+			color: $Red;
 		}
 	}
 }

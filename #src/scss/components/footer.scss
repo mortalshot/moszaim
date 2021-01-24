@@ -81,7 +81,29 @@
 
 		.menu__link {
 			white-space: nowrap;
-			display: block;
+			display: inline-block;
+			position: relative;
+
+			@media screen and (min-width: 992px) {
+				&:hover {
+					&::before {
+						transform: translate(-50%, 0) scale(1);
+					}
+				}
+			}
+
+			&::before {
+				content: "";
+				display: block;
+				height: 1px;
+				width: 100%;
+				background-color: $Red;
+				position: absolute;
+				left: 50%;
+				bottom: 0;
+				transform: translate(-50%, 0) scale(0);
+				transition: 0.3s ease all 0s;
+			}
 		}
 	}
 
@@ -138,6 +160,13 @@
 		font-size: 13px;
 		line-height: 16px;
 		color: $Black;
+		transition: 0.3s ease all 0s;
+
+		@media screen and (min-width: 992px) {
+			&:hover {
+				color: $Red;
+			}
+		}
 	}
 
 	&__contact-label {

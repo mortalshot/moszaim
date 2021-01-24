@@ -4792,7 +4792,18 @@ $(document).ready(function () {
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
-    dots: true
+    dots: true,
+    responsive: [{
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 2
+      }
+    }, {
+      breakpoint: 575,
+      settings: {
+        slidesToShow: 1
+      }
+    }]
   });
   var sumSlider = document.getElementById('sumSlider');
   var sumInput = document.getElementById('inputSumSlider');

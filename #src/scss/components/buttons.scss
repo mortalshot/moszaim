@@ -44,10 +44,34 @@
 		display: inline-flex;
 		align-items: center;
 		white-space: nowrap;
-		padding: 0; 
+        padding: 0; 
+        
+        @media screen and (min-width: 992px) {
+			&:hover {
+				span {
+					&::before {
+						transform: translate(-50%, 0) scale(1);
+					}
+				}
+			}
+		}
 
 		span {
-			margin-right: 7px;
+            margin-right: 7px;
+            position: relative;
+
+			&::before {
+				content: "";
+				display: block;
+				height: 1px;
+				width: 100%;
+				background-color: $Red;
+				position: absolute;
+				left: 50%;
+				bottom: 0;
+				transform: translate(-50%, 0) scale(0);
+				transition: 0.3s ease all 0s;
+			}
 		}
 
 		i {
